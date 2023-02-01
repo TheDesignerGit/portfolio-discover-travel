@@ -1,0 +1,531 @@
+/*  === Google Fonts ===  .:. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&family=Oswald:wght@300;400;500;600;700&family=Rubik:wght@300;400;500&display=swap');
+
+
+/* ==== Variables ==== .:. */
+
+:root {
+    --z-index-behind-2: -10;
+    --z-index-behind: -1;
+    --z-index-1: 1;
+    --z-index-10: 10;
+    --z-index-100: 100;
+    --z-index-1000: 1000;
+
+    --colour-nav-text: #2b4069;
+    --colour-hero-text: hsl(221, 41%, 13%);
+    /* #2b4069     #232123 */
+    --colour-overlay-dot1: #9fa5d6;
+    /* #008fd5 */
+    --colour-overlay-dot2: #e8e178;
+    --transition-7: .7s all;
+    --height-imgs: 0%;
+}
+
+/* ==== Resets and Globals ==== .:. */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+
+ul {
+    list-style: none;
+}
+
+/* ==== Base styles ==== .:. */
+
+
+
+.loading-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #908d5a;
+    z-index: 99;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity .33s ease;
+    pointer-events: none;
+}
+
+.loading-screen.active {
+            /* add to Anki, 5*s - selector */
+    opacity: 0;
+}
+
+
+/* ==== Hero Page ==== ..: */
+section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* overflow-x: hidden; */
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    color: var(--colour-nav-text);
+    z-index: var(--z-index-1);
+}
+
+nav .middle h4 {
+    /* font-family: "Oswald", sans-serif; */
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.middle .logo {
+    background: url(./img/brand-sa-logo3.jpg) no-repeat center/contain;
+    /* height: 75px;
+    width: 195px; */
+    height: 35px;
+    width: 89px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 1px solid hsl(22, 22%, 90%);
+}
+
+li {
+    display: inline;
+            /* add to Anki */
+    margin-right: 2rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    z-index: var(--z-index-1000);
+}
+
+#home a {
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    color: var(--colour-nav-text);
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: var(--z-index-behind);
+    font-family: "Oswald", sans-serif;
+    font-size: 6rem;
+    letter-spacing: 1px;
+    transform: scaleY(1.7);
+    text-transform: uppercase;
+}
+
+.black {
+    color: var(--colour-hero-text);
+}
+
+.outlined {
+    color: transparent;
+    -webkit-text-stroke: .2rem var(--colour-hero-text);
+    opacity: .8;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: var(--z-index-behind-2);
+    position: fixed;
+    background: url(../assets/img/bg.jpg) no-repeat center bottom/cover;
+            /* add to Anki,5*s - shorthand, relative path */
+}
+
+.desc {
+    position: fixed;
+    bottom: 0;
+    height: 25rem;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.sub-title {
+    color: white;
+    padding-bottom: 2.5rem;
+    width: 65%;
+    overflow: hidden;
+    align-self: flex-end;
+        /* add to Anki */
+}
+
+.bottom-nav {
+    width: 100%;
+    height: 8.8rem;
+    background: #cac5c1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bottom-nav h4 {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    transform: scaleY(1.7) translateX(-2rem);
+    color: var(--colour-nav-text);
+    transition: var(--transition-7);
+}
+
+.circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--colour-nav-text);
+    margin: 0 2rem;
+    cursor: pointer;
+    background-color: darkgrey;
+    transition: var(--transition-7);
+}
+
+.circle:hover {
+    background-color: white;
+}
+
+/*  shape: display (eg. grid, flex, block), 
+            shape size etc, position
+    value
+    colour
+    edge 
+    around element: margin*/
+
+.circle::before {
+    content: '';
+    display: block;
+    height: .15rem;
+    width: 1.5rem;
+    background-color: var(--colour-nav-text);
+    margin-top: 46%;
+    margin-left: -50%;
+}
+
+.circle::after {
+    content: '';
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    opacity: .2;
+    background-color: var(--colour-nav-text);
+    margin-left: -20rem;
+    margin-top: -138%;
+    transition: var(--transition-7); 
+    transition-timing-function: ease;
+}
+
+.bottom-nav:hover .circle::after {
+        /* add to Anki, 5*s - selector */
+    transition: var(--transition-7);
+    transition-timing-function: ease;
+    margin-left: -1.6rem;
+}
+
+
+.bottom-nav:hover h4 {
+            /* add to Anki, 5*s - combining selectors */
+    transform: scaleY(1.7) translateX(0rem);
+}
+
+
+/* ==== Second / Content Page ===== ..: */
+
+    .grid {
+    display: none;
+    /* grid-template: repeat(12, 1fr) / repeat(12, 1fr); */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column: 1/span 12;
+    grid-row: 1/span 12;
+            /* add to Anki, 12 grid layout */
+    width: 100%;
+    height: 100%;
+    grid-gap: .2rem .2rem;
+    position: absolute;
+    top: 0;
+}
+
+
+.imgs {
+    grid-column: 3/span 4;
+    grid-row: 3/span 8;
+            /* add to Anki, 3*s - grid element */
+    width: 100%;
+    height: var(--height-imgs);
+    overflow: hidden;
+    position: relative;
+    /* top: 100%; */
+    transform-origin: top;
+            /* add to Anki, 3*s - */
+    /* transform: rotateX(180deg); */
+}
+
+.first-img {
+    height: 44.5rem;
+    /* background: url(./img/first.png) no-repeat center center;
+    background-size: cover; */
+            /* add to Anki, 5*s - c. object-fit */
+    background: url(./img/first.jpg) no-repeat 45% top;
+    background-size: cover;
+}
+
+.imgs-2 {
+    grid-column: 7/span 2;
+    width: 100%;
+    grid-row: 3/span 5;
+    height: var(--height-imgs);
+    overflow: hidden;
+    position: relative;
+    /* top: 100%; */
+    transform-origin: top;
+    /* transform: rotateX(180deg); */
+}
+
+
+.second-img {
+    height: 40rem;
+    background: url(./img/second.png) no-repeat center center;
+    background-size: cover;
+}
+
+
+
+.imgs-3 {
+    grid-column: 7/span 2;
+    grid-row: 8/span 3;
+    width: 100%;
+    height: var(--height-imgs);
+    overflow: hidden;
+    position: relative;
+    /* top: 100%; */
+    transform-origin: top;
+    /* transform: rotateX(180deg); */
+}
+
+
+.third-img {
+    height: 30rem;
+    background: url(./img/alt-1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+
+.imgs-4 {
+    grid-column: 9/span 2;
+    grid-row: 3/span 8;
+    width: 100%;
+    height: var(--height-imgs);
+    overflow: hidden;
+    position: relative;
+    /* top: 100%; */
+    transform-origin: top;
+    /* transform: rotateX(180deg); */
+}
+
+
+.fourth-img {
+    height: 60rem;
+    background: url(./img/alt-3-namibia.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+
+.destination {
+    grid-column: 2/span 2;
+    grid-row: 10/span 1;
+    z-index: var(--z-index-1);
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    color: white;
+    letter-spacing: 1px;
+    transform: scaleX(1.5) translateY(2rem);
+    opacity: 0;
+}
+
+.white_outline {
+    -webkit-text-stroke: 1px #fff;
+}
+
+
+.img-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* transform: rotateX(180deg); */
+    cursor: pointer;
+    transition: var(--transition-7);
+}
+
+.img-wrapper:hover {
+    transform: scale(1.1); /* rotateX(180deg) */
+}
+
+.back-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    grid-column: 10/11;
+    grid-row: 11/12;
+    align-self: center;
+    justify-self: center;
+    width: auto;
+    height: auto;
+        /* add to Anki, w & h based on content */
+    padding: 1rem;
+    color: var(--colour-nav-text);
+    background-color: white;
+    z-index: var(--z-index-1000);
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: color .3s ease, 
+                background-color 1s ease,
+                transform .3s ease-out ;
+}
+
+.back-btn:hover {
+    color: white;
+    background-color: transparent;
+    outline: .1rem solid white;
+}
+
+.back-btn:active {
+    transform: scale(0.9)
+}
+
+.forest {
+    position: absolute;
+    top: 60vh;
+        /* add to Ankin, using vh */
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-index-behind);
+    transform: rotate(351deg) scale(1.3);
+}
+
+.forest img {
+    width: 100%;
+}
+
+
+/* ==== Responsive ==== .:. */
+/* @media only screen and (max-height: 600px) {
+    .first-img {
+        background-size: 193%;
+    }
+} */
+
+@media only screen and (max-width: 990px) {
+        /* add to Anki, 1*s -  */
+    .title {
+        font-size: 6rem;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+        /* add to Anki, 1*s -  */
+    .title {
+        font-size: 5rem;
+    }
+    .sub-title{
+        width: 90%;
+        font-size: 1.5rem;
+        padding-left: 30px;
+    }
+
+    .imgs {
+        grid-row: 3/span 6;
+    }
+    .first-img {
+        height: 40rem;
+    }
+    .imgs-2 {
+        grid-row: 9/span 2;
+        grid-column: 3/span 4;
+    }
+    .imgs-3 {
+        grid-row: 3/span 3;
+        grid-column: 7/span 4;
+    }
+    .third-img {
+        height: 20rem;
+    }
+    .imgs-4 {
+        grid-row: 6/span 5;
+        grid-column: 7/span 4;
+    }
+
+    .forest {
+        top: 62vh;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+        /* add to Anki, 1*s -  */
+    .title {
+        font-size: 4rem;
+    }
+    .sub-title{
+        width: 90%;
+        font-size: 1.5rem;
+        padding-left: 50px;
+    }
+    .bottom-nav {
+        height: 6rem;
+        font-size: 1.2rem;
+    }
+    .desc {
+        width: 60vw;
+    }
+    nav {
+        flex-direction: column;
+    }    
+
+    .forest img {
+        height: 100%;
+        /* width: 130%; */
+        margin-top: 15%;
+    }
+
+    .forest {
+        top: 43vh;
+    }
+}
+/* ==== End of Media Queries - Responsive ==== .:. */

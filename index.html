@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 - Destination</title>
+    <!-- ==== Google Fonts, FA, TweenMax ==== .:.-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://kit.fontawesome.com/01f099256f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="./assets/script.js"></script>
+</head>
+
+<body>
+    <div class="loading-screen">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="loader">
+            <g transform="translate(20 50)">
+                <circle cx="0" cy="0" r="6" fill="#2b4069">
+                    <animateTransform attributeName="transform" type="scale" begin="-0.375s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                </circle>
+            </g>
+            <g transform="translate(40 50)">
+                <circle cx="0" cy="0" r="6" fill="#fff">
+                    <animateTransform attributeName="transform" type="scale" begin="-0.25s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                </circle>
+            </g>
+            <g transform="translate(60 50)">
+                <circle cx="0" cy="0" r="6" fill="#2b4069">
+                    <animateTransform attributeName="transform" type="scale" begin="-0.125s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                </circle>
+            </g>
+            <g transform="translate(80 50)">
+                <circle cx="0" cy="0" r="6" fill="#fff">
+                    <animateTransform attributeName="transform" type="scale" begin="0s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                </circle>
+            </g>
+        </svg>
+    </div>
+    <section>
+        <nav>
+            <div class="left">  
+                <ul>
+                    <li class="fa fa-home" id="home">
+                        <a href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="middle">
+                <h4>Brand SA</h4>
+                <div class="logo"></div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><i class="fa fa-twitter"></i></li>
+                    <li><i class="fa fa-facebook"></i></li>
+                    <li><i class="fa fa-instagram"></i></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="title">
+                <h1>
+                    <span class="outlined">Discover</span> <span class="black">Gqeberha</span>
+                </h1>
+            </div>
+            <div class="forest">
+                <img src="./assets/img/forest.png" alt="forest">
+            </div>
+            <div class="desc">
+                <p class="sub-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam modi temporibus neque esse animi, minima ipsam facilis, repellendus</p>
+                <div class="bottom-nav" id="bottom-nav">
+                    <h4>Explore Destination</h4>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <h1 class="destination">Lake Tanyaka<br><span class="outlined white_outline">Upper Sudan</span></h1>
+            <div class="back-btn"><i class="fa fa-arrow-up"></i></div>
+
+            <div class="imgs">
+                <div class="img-wrapper first-img"></div>
+            </div>
+            <div class="imgs-2">
+                <div class="img-wrapper second-img"></div>
+            </div>
+            <div class="imgs-3">
+                <div class="img-wrapper third-img"></div>
+            </div>
+            <div class="imgs-4">
+                <div class="img-wrapper fourth-img"></div>
+            </div>
+
+        </div>
+        <div class="bg-image"></div>
+    </section>
+</body>
+
+</html>
