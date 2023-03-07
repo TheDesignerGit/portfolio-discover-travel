@@ -167,7 +167,7 @@ li {
     top: 0;
     z-index: var(--z-index-behind-2);
     position: fixed;
-    background: url(../assets/img/bg.jpg) no-repeat center bottom/cover;
+    background: url(../assets/img/bg.webp) no-repeat center bottom/cover;
             /* add to Anki,5*s - shorthand, relative path */
 }
 
@@ -320,7 +320,7 @@ li {
     /* background: url(./img/first.png) no-repeat center center;
     background-size: cover; */
             /* add to Anki, 5*s - c. object-fit */
-    background: url(./img/first.jpg) no-repeat 45% top;
+    background: url(./img/first.webp) no-repeat 45% top;
     background-size: cover;
 }
 
@@ -340,7 +340,7 @@ li {
 .second-img {
     /* height: 40rem; */
     height: clamp(25rem, 100%, 160rem);
-    background: url(./img/second.png) no-repeat center center;
+    background: url(./img/second.webp) no-repeat center center;
     background-size: cover;
 }
 
@@ -362,7 +362,7 @@ li {
 .third-img {
     /* height: 30rem; */
     height: clamp(25rem, 100%, 160rem);
-    background: url(./img/alt-1.jpg) no-repeat center center;
+    background: url(./img/alt-1.webp) no-repeat center center;
     background-size: cover;
 }
 
@@ -383,7 +383,7 @@ li {
 .fourth-img {
     height: clamp(35rem, 100%, 160rem);
     /* height: 60rem; */
-    background: url(./img/alt-3-namibia.jpg) no-repeat center center;
+    background: url(./img/alt-3-namibia.webp) no-repeat center center;
     background-size: cover;
 }
 
@@ -643,6 +643,10 @@ li {
         width: 200%;
         height: auto;
         top: 45vh;
+    }
+
+    .right {
+        display: none;
     }
 }
 

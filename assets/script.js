@@ -77,7 +77,6 @@ const overlay = document.querySelector('.loading-screen')
                     ease: Expo.easeInOut
                 }, "-=3")
                 .to('.bottom-nav', 3, {
-                    width: '0%',
                     autoAlpha: 0,
                     ease: Power3.easeInOut
                 }, "-=3")
